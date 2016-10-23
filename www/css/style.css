@@ -61,3 +61,14 @@
   background-repeat: no-repeat;
   -webkit-appearance: none;
 }
+
+.stat{
+  font-size: 24pt;
+color:#21d663;
+}
+
+.stat-description{
+  font-size: 8pt;
+  font-weight: 600;
+  margin-top: 10px;
+}

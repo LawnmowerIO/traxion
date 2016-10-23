@@ -10,7 +10,7 @@
 
   </ion-nav-bar>
 
-  <ion-content style="    background-color: #121315;">
+  <ion-content style="    background-color: #121315;" scroll="false">
 
     <div class="" style="margin: 15px 30px;">
       <div class="item item-image" style="    border: 0;">
@@ -70,6 +70,32 @@
         </div>
       </div>
     </ion-audio-track>
+
+
+    <div style="display:flex;  justify-content: space-between;margin-top: 35px;" >
+      <div class="" style="    color:white;border: 0;    align-self: center;
+    margin: auto;text-align: center;
+">
+        <div class="stat">
+          {{equityPercent}}%
+        </div>
+        <div class="stat-description">
+          YOUR SHARES
+        </div>
+      </div>
+      <div class="" style="    color:white;border: 0;    align-self: center;
+    margin: auto;text-align: center;
+">
+        <div class="stat">
+            {{numPlays}}
+          </div>
+<div class="stat-description">
+  TOTAL PLAYS
+</div>
+      </div>
+
+    </div>
+
 
   </ion-content>
 </ion-view>
