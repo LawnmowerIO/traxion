@@ -1,12 +1,19 @@
-<ion-view>
-  <ion-nav-title>
-    {{ track.title }} - {{ track.artist }}
-  </ion-nav-title>
+<ion-view hide-nav-bar="true">
+  <ion-nav-bar class="bar-spotify-dark">
+    <ion-nav-back-button class="button-clear" style="color:white;">
+      <i class="ion-close"></i> asdfasd
+    </ion-nav-back-button>
+    <ion-nav-title>
+      Now Playing
+    </ion-nav-title>
 
-  <ion-content>
 
-    <div class="list list-inset" style="margin: 10px 50px">
-      <div class="item item-image">
+  </ion-nav-bar>
+
+  <ion-content style="    background-color: #121315;">
+
+    <div class="" style="margin: 20px">
+      <div class="item item-image" style="    border: 0;">
         <img src="{{track.art}}" >
       </div>
     </div>
@@ -14,26 +21,49 @@
 
 
     <ion-audio-track track="track" toggle-playback="togglePlayback">
-      <div class="list list-inset">
-        <div class="item ">
+      <div class="">
+        <div class="item " style="background-color: #121315;border:0;    padding: 8px 16px;">
           <div style="text-align: center;">
-          <h2>{{track.title}}</h2>
+          <h2 style="color:white;">{{track.title}}</h2>
           <p>{{track.artist}}</p>
           </div>
 
         </div>
-        <div class="item">
-          <div>
-            <div style="display: flex;float:left;margin-top:6px;">
-              <ion-audio-controls>
-                <a class="button button-icon icon" ion-audio-play></a>
-                <!--<ion-spinner icon="ios"></ion-spinner>-->
-              </ion-audio-controls>
+        <!--<div class="item" style="background-color: #121315;border:0;    padding-top: 0;-->
+    <!--padding-bottom: 0;">-->
+          <!--<div style="    color: white;">-->
+            <!--<ion-audio-progress-bar track="track"></ion-audio-progress-bar>-->
+          <!--</div>-->
 
-            </div>
-            <div>
-              <ion-audio-progress-bar track="track" display-time></ion-audio-progress-bar>
-            </div>
+
+        <!--</div>-->
+
+        <div class="item " style="background-color: #121315;border:0;    text-align: center;display:flex;  justify-content: space-between;    padding: 16px 32px;  align-items: center;
+" class="container-buttons">
+
+          <div style="font-size: 16pt;
+    margin-left: 20px;">
+            <i class="icon ion-shuffle" style="color:white;"></i>
+
+
+          </div>
+          <div style="    font-size: 20pt;margin-left: 20px;">
+            <i class="icon ion-skip-backward" style="color:white;"></i>
+          </div>
+          <ion-audio-controls>
+
+            <a class="button button-icon icon" ion-audio-play style="    color: white;"></a>
+            <!--<ion-spinner icon="ios"></ion-spinner>-->
+
+          </ion-audio-controls>
+
+          <div style="    font-size: 20pt;margin-right: 20px;">
+            <i class="icon ion-skip-forward" style="color:white;"></i>
+
+          </div>
+          <div style="font-size: 16pt;
+    margin-right: 20px;">
+            <i class="icon ion-loop" style="color:white;"></i>
 
           </div>
 

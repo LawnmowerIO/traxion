@@ -6,3 +6,29 @@
 .item-icon-left .icon, .item-icon-right .icon {
   font-size: 20px;
 }
+
+
+.bar-spotify{
+   background-color: #1a1a1a;
+   color:white;
+   border:0;
+ }
+
+.bar-spotify-dark{
+  background-color: #121315;
+  color:white;
+  border:0;
+}
+
+.bar-header {
+  border: 0px !important;
+  border-bottom-color: transparent !important;
+  background-image: none !important;
+  border-bottom: none !important;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+

@@ -1,11 +1,11 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
+    <ion-nav-bar class="bar-spotify" style="background-color:#828282;">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" style="    color: white;">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
@@ -13,9 +13,9 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">✕</h1>
-    </ion-header-bar>
+    <!--<ion-header-bar class="bar-stable" style="    display: none;">-->
+      <!--<h1 class="title">✕</h1>-->
+    <!--</ion-header-bar>-->
     <ion-content>
       <ion-list>
         <ion-item class="item item-avatar">
@@ -25,12 +25,15 @@
         </ion-item>
 
         <ion-item menu-close
+                  style="border:0;"
                   href="#/app/songs"
                   class="item item-icon-left item-menu">
           <i class="icon ion-music-note" ></i>
           Listen Now
         </ion-item>
         <ion-item
+          style="border:0;"
+
           class="item item-icon-left item-menu">
           <i class="icon ion-search" ></i>
 
@@ -38,6 +41,8 @@
         </ion-item>
 
         <ion-item menu-close
+                  style="border:0;"
+
                   href="#/app/portfolio"
                   class="item item-icon-left item-menu">
           <i class="icon ion-pie-graph" ></i>
@@ -46,6 +51,8 @@
         </ion-item>
 
         <ion-item
+          style="border:0;"
+
           class="item item-icon-left item-menu">
           <i class="icon ion-help" ></i>
 
@@ -53,7 +60,9 @@
         Help
         </ion-item>
 
-        <ion-item                   class="item item-icon-left item-menu">
+        <ion-item
+          style="border:0;"
+          class="item item-icon-left item-menu">
           <i class="icon ion-gear-a" ></i>
 
           Settings

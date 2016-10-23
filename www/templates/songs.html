@@ -1,15 +1,15 @@
 <ion-view view-title="Listen Now">
-  <ion-content>
+  <ion-content style="background-color: #121315;">
     <ion-list>
 
-      <div class="item item-divider">
+      <div class="item item-divider" style="    background-color: #121315;color: white;    border: 0;">
         Recently Played
       </div>
 
 
-      <a class="item item-avatar" href="#" ng-repeat="song in songs" ng-click="gotoSong(song.id)">
+      <a class="item item-avatar" href="#" ng-repeat="song in songs" ng-click="gotoSong(song.id)" style="background-color: #121315;border:0;">
           <img src="{{song.art}}" style="  border-radius: 0;">
-          <h2>{{song.title}}</h2>
+          <h2 style="color:white;">{{song.title}}</h2>
           <p>{{song.artist}}</p>
         </a>
 
