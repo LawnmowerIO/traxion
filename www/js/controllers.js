@@ -95,13 +95,11 @@ angular.module('starter.controllers', [])
       if (this.showBigSong){
         return {
           start:.06,
-          end:.09,
           interval:.001
         }
       } else {
         return {
           start:.1,
-          end:.3,
           interval:.01
         }
 
