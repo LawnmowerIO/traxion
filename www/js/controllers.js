@@ -12,13 +12,16 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('SongCtrl', function($scope, $stateParams, SongService) {
+.controller('SongCtrl', function($scope, $stateParams, SongService, $timeout) {
 
   for (var i = 0; i < SongService.songs.length; i++){
     console.log(SongService.songId);
     console.log(SongService.songs[i].id);
     if (SongService.songs[i].id == SongService.songId){
       $scope.track = SongService.songs[i];
+      $timeout(function(){
+        $scope.togglePlayback = true;
+      }, 300);
       break;
     }
   }
