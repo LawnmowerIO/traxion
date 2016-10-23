@@ -1,45 +1,104 @@
-<ion-view>
-  <ion-nav-title>
-    {{ track.title }} - {{ track.artist }}
-  </ion-nav-title>
+<ion-view title="Portfolio">
 
-  <ion-content>
+  <ion-nav-bar class="bar-spotify"
+               align-title="center">
+    <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon" style="color:white;"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
 
-    <div class="list list-inset">
-      <div class="item item-image">
-        <img src="{{track.art}}" >
+  <ion-content scrollbar-y="false" style="background-color: #121315;">
+
+    <div >
+
+      <div class="list">
+
+
+
+        <div class="" style="margin-top: 1em;">
+
+          <div style="height:15em;text-align: center;margin-left: auto;margin-right: auto;    margin-top: 2em;">
+            <canvas chart-type="pie" chart-data="data.holdings" chart-options="chartOptions" id="myChart"></canvas>
+          </div>
+
+        </div>
+
       </div>
+      <div class="list list-inset" style="margin-top: 0;">
+
+
+        <a class="item item-icon-left" href="#" style="     border-color: #555555;
+   background-color: #121315;
+    color: white;">
+          <i class="icon ion-bag"></i>
+          Current Balance
+    <span class="item-note" style="color: #21d663;font-weight: bolder;
+    font-size: 16pt;">
+      ${{balance}}
+    </span>
+        </a>
+
+
+        <a class="item item-icon-left" href="#" style="     border-color: #555555;
+   background-color: #121315;
+    color: white;">
+          <i class="icon ion-headphone"></i>
+          Total Plays
+    <span class="item-note" style="color: #21d663;font-weight: bolder;
+    font-size: 16pt;">
+      {{plays}}
+    </span>
+        </a>
+
+
+        <a class="item item-icon-left" href="#" style="     border-color: #555555;
+   background-color: #121315;
+    color: white;">
+          <i class="icon ion-card"></i>
+          Paid
+    <span class="item-note" style="color: #21d663;font-weight: bolder;
+    font-size: 16pt;">
+      ${{paid}}
+    </span>
+        </a>
+
+        <a class="item item-icon-left" href="#" style="      border-color: #555555;
+  background-color: #121315;
+    color: white;">
+          <i class="icon ion-cash"></i>
+          Revenue
+    <span class="item-note" style="color: #21d663;font-weight: bolder;
+    font-size: 16pt;">
+      ${{revenue}}
+    </span>
+        </a>
+
+        <a class="item item-icon-left" href="#" style="       border-color: #555555;
+ background-color: #121315;
+    color: white;">
+          <i class="icon ion-stats-bars"></i>
+          Return
+    <span class="item-note" style="color: #21d663;font-weight: bolder;
+    font-size: 16pt;">
+      {{return_percent}}%
+    </span>
+        </a>
+
+
+      </div>
+
+
+      <div class="list" style="margin-left: 10px;
+    margin-right: 10px;">
+        <button class="button button-block button-balanced">
+          Cash Out
+        </button>
+
+
+      </div>
+
     </div>
 
-
-
-    <ion-audio-track track="track" toggle-playback="togglePlayback">
-      <div class="list list-inset">
-        <div class="item ">
-          <div>
-          <h2>{{track.title}}</h2>
-          <p>{{track.artist}}</p>
-          </div>
-
-        </div>
-        <div class="item">
-          <div>
-            <div style="display: flex;float:left;margin-top:6px;">
-              <ion-audio-controls>
-                <a class="button button-icon icon" ion-audio-play></a>
-                <!--<ion-spinner icon="ios"></ion-spinner>-->
-              </ion-audio-controls>
-
-            </div>
-            <div>
-              <ion-audio-progress-bar track="track" display-time></ion-audio-progress-bar>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </ion-audio-track>
-
   </ion-content>
+
 </ion-view>
