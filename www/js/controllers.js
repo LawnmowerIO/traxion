@@ -7,6 +7,18 @@ angular.module('starter.controllers', [])
 .controller('SongsCtrl', function($scope, SongService, $state) {
   $scope.songs = SongService.songs;
 
+  $scope.coverflows = [
+    {id: 16},
+    {id: 17},
+    {id: 18},
+    {id: 19},
+    {id: 20},
+    {id: 21},
+    {id: 22},
+    {id: 23},
+    {id: 24}
+  ];
+
   $scope.gotoSong = function(id){
     SongService.songId = id;
     SongService.showBigSong = !SongService.showBigSong;

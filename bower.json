@@ -7,6 +7,7 @@
   "dependencies": {
     "ionic-audio": "~1.3.1",
     "angular-numeraljs": "~1.3.0",
-    "tc-angular-chartjs": "~2.1.3"
+    "tc-angular-chartjs": "~2.1.3",
+    "angular-swiper": "~0.4.0"
   }
 }

@@ -1,6 +1,17 @@
 <ion-view view-title="Listen Now">
   <ion-content style="background-color: #121315;">
     <ion-list>
+      <div style="margin-top: 3em;margin-bottom:2em;">
+
+      <ks-swiper-container initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5"
+                           pagination-clickable="false"
+                           override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : true}}"
+                           swiper="swiper" on-ready="onReadySwiper(swiper)">
+        <ks-swiper-slide class="swiper-slide" ng-repeat="coverflow in coverflows">
+          <img ng-src="img/{{coverflow.id}}.png" width="100%">
+        </ks-swiper-slide>
+      </ks-swiper-container>
+</div>
 
       <div class="item item-divider" style="    background-color: #121315;color: white;    border: 0;    font-weight: 900;">
         Recently Played
