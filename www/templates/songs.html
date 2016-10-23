@@ -1,0 +1,19 @@
+<ion-view view-title="Listen Now">
+  <ion-content>
+    <ion-list>
+
+      <div class="item item-divider">
+        Recently Played
+      </div>
+
+
+      <a class="item item-avatar" href="#" ng-repeat="song in songs" ng-click="gotoSong(song.id)">
+          <img src="{{song.art}}" style="  border-radius: 0;">
+          <h2>{{song.title}}</h2>
+          <p>{{song.artist}}</p>
+        </a>
+
+
+    </ion-list>
+  </ion-content>
+</ion-view>

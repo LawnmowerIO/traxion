@@ -1,0 +1,45 @@
+<ion-view>
+  <ion-nav-title>
+    {{ track.title }} - {{ track.artist }}
+  </ion-nav-title>
+
+  <ion-content>
+
+    <div class="list list-inset" style="margin: 10px 50px">
+      <div class="item item-image">
+        <img src="{{track.art}}" >
+      </div>
+    </div>
+
+
+
+    <ion-audio-track track="track" toggle-playback="togglePlayback">
+      <div class="list list-inset">
+        <div class="item ">
+          <div style="text-align: center;">
+          <h2>{{track.title}}</h2>
+          <p>{{track.artist}}</p>
+          </div>
+
+        </div>
+        <div class="item">
+          <div>
+            <div style="display: flex;float:left;margin-top:6px;">
+              <ion-audio-controls>
+                <a class="button button-icon icon" ion-audio-play></a>
+                <!--<ion-spinner icon="ios"></ion-spinner>-->
+              </ion-audio-controls>
+
+            </div>
+            <div>
+              <ion-audio-progress-bar track="track" display-time></ion-audio-progress-bar>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </ion-audio-track>
+
+  </ion-content>
+</ion-view>
