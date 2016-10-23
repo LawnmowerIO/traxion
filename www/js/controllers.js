@@ -64,7 +64,7 @@ angular.module('starter.controllers', [])
 
 })
 
-  .controller('PortfolioCtrl', function($scope, $stateParams, SongService, $timeout, $ionicLoading, $http) {
+  .controller('PortfolioCtrl', function($scope, $stateParams, SongService, $timeout, $ionicLoading, $http, $ionicPopup) {
     $scope.disabled = false;
 
 
@@ -269,6 +269,18 @@ angular.module('starter.controllers', [])
     $scope.plays = '11,012';
     $scope.balance = SongService.balance;
 
+    $scope.showAlert = function() {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Success',
+        template: 'You have successfully cashed out of your Traxion account.'
+      });
+
+      alertPopup.then(function(res) {
+        console.log('done');
+      });
+    };
+
+
     $scope.cashOut = function(){
       $scope.disabled=true;
 
@@ -292,6 +304,7 @@ angular.module('starter.controllers', [])
         $scope.$parent.balance = SongService.balance;
 
         $ionicLoading.hide();
+        $scope.showAlert();
         $scope.disabled = false;
       }, 1000);
 

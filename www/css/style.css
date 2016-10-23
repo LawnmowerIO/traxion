@@ -76,3 +76,21 @@ color:#21d663;
 .spinner-ios{
   stroke: white !important;
 }
+
+.popup{
+  background-color: #1a1a1a !important;
+  color:white;
+}
+
+.popup-title{
+  color:white;
+}
+
+.popup-head{
+  border-bottom:0;
+}
+
+.popup-buttons .button:last-child{
+  background-color: #21d663 !important;
+
+}
