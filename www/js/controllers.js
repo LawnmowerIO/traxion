@@ -2,6 +2,14 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, SongService) {
   $scope.balance = SongService.balance;
+  $scope.showNavbar = true;
+  //$scope.$on( "$ionicView.beforeEnter", function( scopes, states ) {
+  //  $scope.showNavbar = true;
+  //});
+  //
+  //$scope.$on( "$ionicView.beforeLeave", function( scopes, states ) {
+  //  $scope.showNavbar = false;
+  //});
 })
 
 .controller('SongsCtrl', function($scope, SongService, $state) {
