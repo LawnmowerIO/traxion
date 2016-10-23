@@ -28,12 +28,40 @@ angular.module('starter.controllers', [])
 
 })
 
-.service('SongService', function(){
-  var self = this;
-  this.songs = [
-    { title: 'Rollout', artist: 'Ludacris', id: 1, url: 'music/1.mp3', art: 'img/1.png' },
-    { title: 'Cowbell', artist: 'Young Thug', id: 2 }
-  ];
+  .controller('PortfolioCtrl', function($scope, $stateParams, SongService, $timeout) {
 
-  this.songId = 1;
+
+  })
+
+
+  .service('SongService', function(){
+  var self = this;
+  //this.songs = [
+  //  { title: 'Rollout', artist: 'Ludacris', id: 1, url: 'music/1.mp3', art: 'img/1.png' },
+  //  { title: 'Cowbell', artist: 'Young Thug', id: 2 }
+  //];
+    this.songs = [
+      { title: 'Pursuit of Happiness', artist: 'Kid Cudi', id: 1 },
+      { title: 'Good Kid, M.A.A.D City', artist: 'Kendrick Lamar', id: 2 },
+      { title: 'Pipe It Up', artist: 'Migos', id: 3 },
+      { title: 'Black Beatles', artist: 'Rae Sremmurd', id: 4 },
+      { title: 'Check', artist: 'Young Thug', id: 5 },
+      { title: 'Lifestyle', artist: 'Rich Gang', id: 6 },
+      { title: 'Dreams and Nightmares (Intro)', artist: 'Meek Mill', id: 7 },
+      { title: 'I’m Different', artist: '2 Chainz', id: 8 },
+      { title: 'Faded', artist: 'Tyga', id: 9 },
+      { title: 'All Gold Everything', artist: 'Trinidad James', id: 10 },
+      { title: 'Slaughterhouse', artist: 'Montana of 300', id: 11 },
+      { title: 'Out The Mud', artist: 'Kevin Gates', id: 12 },
+      { title: 'Drop The World', artist: 'Lil Wayne', id: 13 },
+      { title: 'My Life', artist: 'The Game', id: 14 },
+      { title: 'Started From The Bottom', artist: 'Drake', id: 15 }
+    ];
+
+    for (var i = 0; i < this.songs.length; i++){
+      this.songs[i].url = 'music/' + this.songs[i].id + '.mp3';
+      this.songs[i].art = 'img/' + this.songs[i].id + '.png';
+    }
+
+    this.songId = 1;
 });

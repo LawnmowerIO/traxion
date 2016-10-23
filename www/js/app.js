@@ -44,7 +44,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-audio'])
       }
     })
 
-  .state('app.song', {
+    .state('app.portfolio', {
+      url: '/portfolio',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/portfolio.html',
+          controller: 'PortfolioCtrl'
+        }
+      }
+    })
+
+
+    .state('app.song', {
     url: '/song',
     views: {
       'menuContent': {
