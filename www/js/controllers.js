@@ -41,16 +41,24 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('SongsCtrl', function($scope, SongService, $state) {
+  $scope.songs = SongService.songs;
+
+  $scope.gotoSong = function(id){
+    SongService.songId = id;
+    $state.go('app.song');
+  };
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('SongCtrl', function($scope, $stateParams) {
+})
+
+.service('SongService', function(){
+  var self = this;
+  this.songs = [
+    { title: 'Reggae', artist: 'Ludacris', id: 1 },
+    { title: 'Cowbell', artist: 'Young Thug', id: 2 }
+  ];
+
+  this.songId = 1;
 });
