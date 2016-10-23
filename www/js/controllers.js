@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
 
 })
 
-  .controller('PortfolioCtrl', function($scope, $stateParams, SongService, $timeout, $ionicLoading) {
+  .controller('PortfolioCtrl', function($scope, $stateParams, SongService, $timeout, $ionicLoading, $http) {
     $scope.disabled = false;
 
 
@@ -252,9 +252,18 @@ angular.module('starter.controllers', [])
     $scope.cashOut = function(){
       $scope.disabled=true;
 
+
+
       $ionicLoading.show({
         noBackdrop: true,
         //template: '<i class="icon ion-loading-c" style="color:white; font-size: 2em"></i>',
+      });
+
+      var request = $http.get('https://glacial-river-50718.herokuapp.com/transfer_funds');
+      request.success(function (data, status, headers, config) {
+        console.log("INFO", "OK");
+      }).error(function (data, status, headers, config) {
+        console.log("ERROR", "statsServices", "getTable", data);
       });
 
       $timeout(function(){

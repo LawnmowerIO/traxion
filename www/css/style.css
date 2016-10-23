@@ -73,3 +73,6 @@ color:#21d663;
   margin-top: 10px;
 }
 
+.spinner-ios{
+  stroke: white !important;
+}
