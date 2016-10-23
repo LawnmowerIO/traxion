@@ -96,7 +96,7 @@ angular.module('starter.controllers', [])
         return {
           start:.1,
           end:.3,
-          interval:.01
+          interval:.001
         }
 
       }
