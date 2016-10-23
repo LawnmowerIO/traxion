@@ -46,6 +46,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-audio', 'count
 
     .state('app.portfolio', {
       url: '/portfolio',
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: 'templates/portfolio.html',

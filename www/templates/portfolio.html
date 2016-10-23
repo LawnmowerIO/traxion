@@ -17,7 +17,7 @@
 
         <div class="" style="margin-top: 1em;">
 
-          <div style="height:15em;text-align: center;margin-left: auto;margin-right: auto;    margin-top: 2em;">
+          <div style="height:12em;text-align: center;margin-left: auto;margin-right: auto;    margin-top: 2em;">
             <canvas chart-type="pie" chart-data="data.holdings" chart-options="chartOptions" id="myChart"></canvas>
           </div>
 
@@ -90,7 +90,7 @@
 
       <div class="list" style="margin-left: 10px;
     margin-right: 10px;">
-        <button class="button button-block button-balanced">
+        <button class="button button-block button-balanced" ng-click="cashOut()" ng-disabled="disabled">
           Cash Out
         </button>
 

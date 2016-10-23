@@ -44,55 +44,35 @@ angular.module('starter.controllers', [])
 
 })
 
-  .controller('PortfolioCtrl', function($scope, $stateParams, SongService, $timeout) {
+  .controller('PortfolioCtrl', function($scope, $stateParams, SongService, $timeout, $ionicLoading) {
+    $scope.disabled = false;
+
+
     $scope.chartOptions = {
+      //Boolean - Whether we should show a stroke on each segment
+      segmentShowStroke : false,
 
-      // Sets the chart to be responsive
-      responsive: false,
+      //String - The colour of each segment stroke
+      segmentStrokeColor : "#1a1a1a",
 
-      ///Boolean - Whether grid lines are shown across the chart
-      scaleShowGridLines: false,
+      //Number - The width of each segment stroke
+      segmentStrokeWidth : 0,
 
-      //String - Colour of the grid lines
-      scaleGridLineColor: "rgba(0,0,0,.05)",
+      //Number - The percentage of the chart that we cut out of the middle
+      percentageInnerCutout : 0, // This is 0 for Pie charts
 
-      //Number - Width of the grid lines
-      scaleGridLineWidth: 1,
+      //Number - Amount of animation steps
+      animationSteps : 100,
 
-      //Boolean - Whether the line is curved between points
-      bezierCurve: false,
+      //String - Animation easing effect
+      animationEasing : "easeOutBounce",
 
-      //Number - Tension of the bezier curve between points
-      bezierCurveTension: 0.4,
+      //Boolean - Whether we animate the rotation of the Doughnut
+      animateRotate : true,
 
-      //Boolean - Whether to show a dot for each point
-      pointDot: false,
-
-      //Number - Radius of each point dot in pixels
-      pointDotRadius: 1,
-
-      //Number - Pixel width of point dot stroke
-      pointDotStrokeWidth: 1,
-
-      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-      pointHitDetectionRadius: 3,
-
-      //Boolean - Whether to show a stroke for datasets
-      datasetStroke: true,
-
-      //Number - Pixel width of dataset stroke
-      datasetStrokeWidth: 1,
-
-      //Boolean - Whether to fill the dataset with a colour
-      datasetFill: false,
-
-      // Function - on animation progress
-      onAnimationProgress: function () {
-      },
-
-      // Function - on animation complete
-      onAnimationComplete: function () {
-      },
+      //Boolean - Whether we animate scaling the Doughnut from the centre
+      animateScale : false,
+      maintainAspectRatio: false,
 
     };
 
@@ -213,7 +193,7 @@ angular.module('starter.controllers', [])
 
     // String - Template string for single tooltips
     //tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
-    Chart.defaults.global.tooltipTemplate = "<%= label %>";
+    Chart.defaults.global.tooltipTemplate = "<%= label %>: <%= value %>%";
 
     // String - Template string for multiple tooltips
     Chart.defaults.global.multiTooltipTemplate = "<%= value %>";
@@ -231,36 +211,65 @@ angular.module('starter.controllers', [])
     $scope.portfolio = {
       songs: [
       {
-        value: 300,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Red"
+        value: 42,
+        color:"#21d663",
+        highlight: "#21d663",
+        label: "Hip-Hop"
       },
       {
-        value: 50,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
+        value: 28,
+        color: "#08BD4A",
+        highlight: "#08BD4A",
+        label: "Electronic"
       },
       {
-        value: 100,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-      }
+        value: 17,
+        color: "#00A330",
+        highlight: "#00A330",
+        label: "Rock"
+      },
+        {
+          value: 13,
+          color: "#008A17",
+          highlight: "#008A17",
+          label: "Country"
+        }
+
     ]
     };
 
 
 
     var ctx = document.getElementById("myChart").getContext("2d");
-    var myNewChart = new Chart(ctx).Pie($scope.portfolio.songs, $scope.options);
+    var myNewChart = new Chart(ctx).Pie($scope.portfolio.songs, $scope.chartOptions);
 
     $scope.paid = 23.43;
     $scope.revenue = 5.12;
     $scope.return_percent = 24.3;
     $scope.plays = '11,012';
     $scope.balance = SongService.balance;
+
+    $scope.cashOut = function(){
+      $scope.disabled=true;
+
+      $ionicLoading.show({
+        noBackdrop: true,
+        //template: '<i class="icon ion-loading-c" style="color:white; font-size: 2em"></i>',
+      });
+
+      $timeout(function(){
+        SongService.balance = 0;
+        $scope.balance = SongService.balance;
+        $scope.$parent.balance = SongService.balance;
+
+        $ionicLoading.hide();
+        $scope.disabled = false;
+      }, 1000);
+
+
+    };
+
+
   })
 
 
