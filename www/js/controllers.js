@@ -8,6 +8,7 @@ angular.module('starter.controllers', [])
 
   $scope.gotoSong = function(id){
     SongService.songId = id;
+    SongService.showBigSong = !SongService.showBigSong;
     $state.go('app.song');
   };
 })
@@ -32,20 +33,13 @@ angular.module('starter.controllers', [])
 
   var incrementEquity = function(){
     $scope.equityPercent += $scope.equity.interval;
-    $timeout(incrementEquity, 1000);
+    if ($scope.equityPercent >= $scope.equity.end){
+      return;
+    }
+    $timeout(incrementEquity, 50);
   };
 
   incrementEquity();
-
-
-  //var incrementPlayCount = function(){
-  //  $scope.numPlays++;
-  //  var nextRun = Math.floor(Math.random() * 4000) + 100;
-  //  $timeout(incrementPlayCount, nextRun);
-  //};
-  //
-  //incrementPlayCount();
-
 
 })
 
@@ -81,7 +75,7 @@ angular.module('starter.controllers', [])
       this.songs[i].art = 'img/' + this.songs[i].id + '.png';
     }
 
-    this.showBigSong = true;
+    this.showBigSong = false;
 
     this.getTotalPlays = function(){
       if (this.showBigSong){
@@ -95,11 +89,13 @@ angular.module('starter.controllers', [])
       if (this.showBigSong){
         return {
           start:.06,
+          end:.09,
           interval:.001
         }
       } else {
         return {
           start:.1,
+          end:.3,
           interval:.01
         }
 
