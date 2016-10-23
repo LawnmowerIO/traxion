@@ -14,21 +14,48 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+      <h1 class="title">✕</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/search">
-          Listen Now
-        </ion-item>
-        <ion-item>
-          Browse
-        </ion-item>
-        <ion-item>
-          Playlists
+        <ion-item class="item item-avatar">
+          <img src="//ionicframework.com/img/docs/spengler.jpg">
+          <h2>Pieter Gorsira</h2>
+          <p>$10.23</p>
         </ion-item>
 
-        <ion-item >
+        <ion-item menu-close
+                  href="#/app/songs"
+                  class="item item-icon-left item-menu">
+          <i class="icon ion-music-note" ></i>
+          Listen Now
+        </ion-item>
+        <ion-item
+          class="item item-icon-left item-menu">
+          <i class="icon ion-search" ></i>
+
+          Search
+        </ion-item>
+
+        <ion-item menu-close
+                  href="#/app/portfolio"
+                  class="item item-icon-left item-menu">
+          <i class="icon ion-pie-graph" ></i>
+
+          Portfolio
+        </ion-item>
+
+        <ion-item
+          class="item item-icon-left item-menu">
+          <i class="icon ion-help" ></i>
+
+
+        Help
+        </ion-item>
+
+        <ion-item                   class="item item-icon-left item-menu">
+          <i class="icon ion-gear-a" ></i>
+
           Settings
         </ion-item>
 

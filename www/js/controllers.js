@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
 .service('SongService', function(){
   var self = this;
   this.songs = [
-    { title: 'Rollout', artist: 'Ludacris', url: 'music/1.mp3', art: 'img/1.png' },
+    { title: 'Rollout', artist: 'Ludacris', id: 1, url: 'music/1.mp3', art: 'img/1.png' },
     { title: 'Cowbell', artist: 'Young Thug', id: 2 }
   ];
 

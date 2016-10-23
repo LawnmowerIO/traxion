@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.list-inset{
+  margin:10px;
+}
+
+.item-icon-left .icon, .item-icon-right .icon {
+  font-size: 20px;
+}
